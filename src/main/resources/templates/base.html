@@ -1,0 +1,13 @@
+<div th:fragment="parent(content)">
+    <h1>This is parent div</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quos.</p>
+    <p>Value of the first parameter :<span th:text="${x}"></span></p>
+    <h1>User is login</h1>
+    <div th:replace="${content}">
+
+
+    </div>
+</div>
+<div th:fragment="logout">
+<h1>User is logout</h1>
+</div>
