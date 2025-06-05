@@ -1,15 +1,36 @@
- <!-- understanding  fragement -->
-     
-<div th:fragment="parent(content)">
-    <h1>This is parent div</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quos.</p>
-    <p>Value of the first parameter :<span th:text="${x}"></span></p>
-    <h1>User is login</h1>
-    <div th:replace="${content}">
+<!DOCTYPE html>
+<html class="light" lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">SCM</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
 
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+
+    <!--common header-->
+    <div data-th-replace="~{navbar :: navbar}">
     </div>
-</div>
-<div th:fragment="logout">
-<h1>User is logout</h1>
-</div>
+
+    <!--main content-->
+    <div class="p-4">
+        <section data-th-replace="${content}"></section>
+    </div>
+
+    <!--common footer-->
+    <footer>
+        SCM: Storing contact details on cloud
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <th:block data-th-replace="${script}"></th:block>
+</body>
+
+</html>

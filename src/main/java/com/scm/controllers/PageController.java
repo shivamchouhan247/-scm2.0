@@ -3,6 +3,9 @@ package com.scm.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class PageController {
@@ -25,4 +28,18 @@ public class PageController {
     public String servicePage(){
         return "services";
     }
+
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+    @RequestMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+    
 }

@@ -1,0 +1,92 @@
+<nav data-th-fragment="navbar"
+  class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <img data-th-src="@{'/images/scm.png'}" alt="Logo" class="h-8 w-auto" />
+        <span class="text-xl font-bold text-slate-900 dark:text-white tracking-wide">SCM</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a data-th-href="@{'/home'}"
+          class="text-sm font-medium text-violet-600 dark:text-violet-400 hover:underline">Home</a>
+        <a data-th-href="@{'/about'}"
+          class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">About</a>
+        <a data-th-href="@{'/services'}"
+          class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">Services</a>
+        <a data-th-href="@{'/contact'}"
+          class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">Contact</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center space-x-3">
+        <!-- Desktop Button: Login -->
+        <a data-th-href="@{'/login'}" class="hidden md:inline-block text-slate-700 dark:text-gray-300 font-semibold text-sm px-5 py-2 rounded-xl transition duration-200 shadow-lg
+          bg-gradient-to-r from-purple-600 to-indigo-600 
+          hover:from-purple-700 hover:to-indigo-700 
+          focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          Login
+        </a>
+    
+
+        <!-- Desktop Button: SignUp -->
+        <a data-th-href="@{'/register'}" class="hidden md:inline-block text-slate-700 dark:text-gray-300 font-semibold text-sm px-5 py-2 rounded-xl transition duration-200 shadow-lg
+          bg-gradient-to-r from-purple-600 to-indigo-600 
+          hover:from-purple-700 hover:to-indigo-700 
+          focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          SignUp
+        </a>
+
+
+
+        <!-- Mobile Toggle -->
+        <button data-collapse-toggle="navbar-cta" type="button"
+          class="md:hidden inline-flex items-center justify-center w-10 h-10 text-slate-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
+          aria-controls="navbar-cta" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden hidden px-4 pt-4 pb-6 bg-white dark:bg-gray-950 space-y-3 rounded-b-xl shadow-md"
+    id="navbar-cta">
+
+    <!-- Navigation Links -->
+    <a data-th-href="@{'/home'}" class="block text-sm font-medium text-violet-600 dark:text-violet-400">Home</a>
+    <a data-th-href="@{'/about'}"
+      class="block text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">About</a>
+    <a data-th-href="@{'/services'}"
+      class="block text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">Services</a>
+    <a data-th-href="@{'/contact'}"
+      class="block text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition">Contact</a>
+
+    <!-- Spacer between links and buttons -->
+    <div class="mt-4 flex flex-col items-center gap-3">
+      <!-- Login Button -->
+      <a data-th-href="@{'/login'}" class="text-center text-slate-700 dark:text-gray-300 font-semibold text-sm px-6 py-2 rounded-xl transition duration-200 shadow-md
+                bg-gradient-to-r from-purple-600 to-indigo-600 
+                hover:from-purple-700 hover:to-indigo-700 
+                focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        Login
+      </a>
+
+      <!-- SignUp Button -->
+      <a data-th-href="@{'/register'}" class="text-center text-slate-700 dark:text-gray-300 font-semibold text-sm px-6 py-2 rounded-xl transition duration-200 shadow-md
+                bg-gradient-to-r from-purple-600 to-indigo-600 
+                hover:from-purple-700 hover:to-indigo-700 
+                focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        SignUp
+      </a>
+    </div>
+  </div>
+
+</nav>
