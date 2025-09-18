@@ -2,7 +2,7 @@ console.log("script loaded");
 
 let currentTheme = getTheme();
 setTheme(currentTheme);
-changeTheme(); // <-- you missed calling this function
+changeTheme(); 
 console.log(getTheme());
 
 // Set to webpage
