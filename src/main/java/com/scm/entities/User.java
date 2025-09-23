@@ -8,6 +8,8 @@ import com.scm.enums.Providers;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -17,6 +19,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name="users")
@@ -25,6 +28,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class User {
 
     @Id
@@ -46,6 +50,8 @@ public class User {
     private boolean emailVerified=false;
     private boolean phoneVerified=false;
 
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
     //SELF, GOOGLE, GITHUB, LINKEDIN, TWITTER, FACEBOOK
     private Providers provider=Providers.SELF;
     private String providerId;
