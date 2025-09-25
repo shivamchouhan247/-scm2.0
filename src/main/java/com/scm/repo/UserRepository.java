@@ -1,13 +1,16 @@
-    package com.scm.repo;
+package com.scm.repo;
 
-    import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
-    import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    import com.scm.entities.User;
+import org.springframework.stereotype.Repository;
 
+import com.scm.entities.User;
 
-    @Repository
-    public interface UserRepository extends JpaRepository<User,String> {
-        public boolean existsByEmail(String email);
-    }
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {
+    public boolean existsByEmail(String email);
+
+    public Optional<User> findByEmail(String email);
+}

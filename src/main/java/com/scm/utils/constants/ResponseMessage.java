@@ -23,4 +23,6 @@ public class ResponseMessage {
     public static final String STATUS_PENDING="Pending";
     public static final String REGISTERED_SUCCESSFULLY="User is registered successfully";
 
+    //Roles
+    public static final String ROLE_USER="ROLE_USER";
 }

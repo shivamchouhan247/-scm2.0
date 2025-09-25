@@ -1,8 +1,8 @@
-package com.scm.service.impl;
+package com.scm.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 
-    ResourceNotFoundException(String msg){
+    public ResourceNotFoundException(String msg){
         super(msg);
     }
 }

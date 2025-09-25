@@ -1,6 +1,8 @@
 package com.scm.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -8,9 +10,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.scm.entities.User;
+import com.scm.exception.ResourceNotFoundException;
 import com.scm.payload.request.RegisterRequest;
 import com.scm.repo.UserRepository;
 import com.scm.service.UserService;
@@ -29,6 +33,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Autowired
     private CommonConfigLogic commonConfigLogic;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Value("${default.user.profilepic}")
     private String profilePicUrl;
@@ -50,14 +56,16 @@ public class UserServiceImpl implements UserService {
 
             String userId = UUID.randomUUID().toString();
             LOGGER.info("userId: {}", userId);
+
             User user = User.builder()
                     .userId(userId)
                     .name(request.getName())
                     .email(request.getEmail())
-                    .password(request.getPassword())
+                    .password(passwordEncoder.encode(request.getPassword()))
                     .about(request.getAbout())
                     .profilePic(profilePicUrl)
                     .enabled(true)
+                    .roles(List.of(ResponseMessage.ROLE_USER))
                     .build();
 
             User savedUser = userRepository.save(user);

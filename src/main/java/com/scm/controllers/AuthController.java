@@ -51,7 +51,6 @@ public class AuthController {
             MessageAlertType alertType = MessageAlertType.fromCode(code);
             String content = String.valueOf(map.get(ResponseMessage.DESCRIPTION));
 
-            LOGGER.info("testing response code {}, and type {}", code, alertType);
             AlertMessage message = AlertMessage.builder()
                     .content(content)
                     .type(alertType)

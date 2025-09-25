@@ -21,27 +21,6 @@ public class RegisterRequest {
     @Pattern(regexp = "^[a-zA-Z][a-zA-Z0-9._\\- ]{4,19}$", message = "Username must start with a letter, 5-20 characters, [characters, letters, numbers, spaces, '.', '-', '_' allowed]")
     private String name;
 
-    // @NotBlank(message = "Email is required")
-    // @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", message = "Please pass
-    // valid email ")
-    // private String email;
-
-    // @NotBlank(message = "password is required")
-    // @Pattern(regexp =
-    // "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-    // message = "Password must be at least 8 characters long and must contain
-    // uppercase, lowercase, digit and special character")
-    // private String password;
-
-    // private String about;
-
-    // @NotBlank(message = "Please check the Terms and condition")
-    // private String terms;
-
-    // @NotBlank(message = "Username is required")
-    // @Size(min=3,message="Min 3 characters is required")
-    // private String name;
-
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email address")
     private String email;
